@@ -18,10 +18,10 @@ class MyUser(AbstractBaseUser):
     user_email = models.EmailField(max_length=250,unique=True,null=False)
     profilephoto = models.ImageField(upload_to='userphoto')
     USERNAME_FIELD = "user_email"
-    REQUIRED_FIELDS = ["user_name", "user_email","profilephoto"]
+    REQUIRED_FIELDS = ["user_name", "profilephoto"]
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=True)
     objects = MyUserManager()
-    
+
     def __str__(self):
         return self.user_email
