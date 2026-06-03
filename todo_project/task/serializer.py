@@ -1,3 +1,4 @@
 from rest_framework.serializers import ModelSerializer
 
-class TaskSer  
+class TaskSerializer(ModelSerializer):
+    pass
