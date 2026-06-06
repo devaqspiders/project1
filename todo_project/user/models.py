@@ -13,10 +13,10 @@ class MyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 class MyUser(AbstractBaseUser):
-    user_id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     user_name = models.CharField(max_length=250,null=False)
     user_email = models.EmailField(max_length=250,unique=True,null=False)
-    profilephoto = models.ImageField(upload_to='userphoto')
+    profilephoto = models.ImageField(upload_to='media/userphoto/')
     USERNAME_FIELD = "user_email"
     REQUIRED_FIELDS = ["user_name", "profilephoto"]
     is_active = models.BooleanField(default=True)

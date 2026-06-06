@@ -1,4 +1,8 @@
 from rest_framework.serializers import ModelSerializer
-
+from task.models import Task
 class TaskSerializer(ModelSerializer):
-    pass
+    class Meta:
+        model = Task
+        fields = ['t_name', 't_desc', 'priority']
+    def create(self, validate_data):
+        return Task.objects.create(**validate_data)
