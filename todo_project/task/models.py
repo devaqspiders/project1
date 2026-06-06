@@ -5,7 +5,7 @@ class Task(models.Model):
     t_name = models.CharField(max_length=250)
     t_desc = models.TextField(null=False,default='')
     priority = models.CharField(max_length=250,null=False,choices=[('HIGH','high'),('LOW','low'),('AVERAGE','average')])
-    user_data = models.ForeignKey(to=MyUser, related_name='user', on_delete=models.CASCADE, default=0)
+    user_data = models.ForeignKey(to=MyUser, related_name='tasks', on_delete=models.CASCADE, default=0)
 
     def __str__(self):
         return self.t_name

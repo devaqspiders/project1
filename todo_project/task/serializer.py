@@ -3,6 +3,6 @@ from task.models import Task
 class TaskSerializer(ModelSerializer):
     class Meta:
         model = Task
-        fields = ['t_name', 't_desc', 'priority']
+        fields = ['t_name', 't_desc', 'priority', 'user_data']
     def create(self, validate_data):
         return Task.objects.create(**validate_data)

@@ -19,6 +19,7 @@ class MyUser(AbstractBaseUser):
     profilephoto = models.ImageField(upload_to='media/userphoto/')
     USERNAME_FIELD = "user_email"
     REQUIRED_FIELDS = ["user_name", "profilephoto"]
+    is_user = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=True)
     objects = MyUserManager()
